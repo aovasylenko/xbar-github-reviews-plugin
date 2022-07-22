@@ -14,6 +14,4 @@
 
 ![image](https://user-images.githubusercontent.com/47987801/180482923-2f1a24f8-4660-4558-9a0e-827a4b67acd9.png)
 
-7. Refresh the plugin and it should work!!
-
-![image](https://user-images.githubusercontent.com/47987801/180482956-0865dd36-841d-40d7-a5f2-a3ea28f95c30.png)
+7. Refresh the plugin and you're all set!
