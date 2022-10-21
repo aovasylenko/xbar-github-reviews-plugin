@@ -54,6 +54,10 @@ def print_needs_configuration():
     """)
 
 
+def get_token(name):
+    return os.environ.get(name).lstrip('*')
+
+
 def get_prs():
     query = """
     {
@@ -77,7 +81,7 @@ def get_prs():
         "https://api.github.com/graphql",
         data=json.dumps({"query": query}).encode(),
         headers={
-          "Authorization": f"Bearer {os.environ.get('VAR_GITHUB_TOKEN')}",
+          "Authorization": f"Bearer {get_token('VAR_GITHUB_TOKEN')}",
           "Content-Type": "application/json"
       }
     )
@@ -94,6 +98,7 @@ def get_prs():
     ]
     
 
+# Lifted and shifted from: https://stackoverflow.com/a/1551394/280708
 def ago_color(time):
     now = datetime.now(timezone.utc)
     diff = now - time
