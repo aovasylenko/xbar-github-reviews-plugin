@@ -1,17 +1,23 @@
-# xbar-github-reviews-plugin
+# xbar-onduty-plugin
 
 ## Setup
 
-1. Install [xbar](https://github.com/matryer/xbar/releases) by downloading the latest release `.dmg` and dragging it to your applications folder when prompted.
-2. Once installed click on the `xbar` app in the bar and select 'Open Plugins Folder'.
-3. Copy and Paste the script file from this repo into the plugins folder.
-4. Click on `xbar` again and click 'Refresh' to reload the plugins.
-5. You should see the bar change from saying `xbar` to a warning message about the plugin. Click on the message and select 'Open Plugin'.
+* Install [xbar](https://github.com/matryer/xbar/releases) by downloading the latest release `.dmg` and dragging it to your applications folder when prompted, or use [homebrew](https://brew.sh/)
+```
+brew install --cask xbar
+```
 
-![image](https://user-images.githubusercontent.com/47987801/180482849-60d3027b-d14c-4299-8754-4229c1ee0283.png)
+* Once `xbar` is installed, install the plugin from the repo source.
+```
+cd ~/REPO_ROOT
+git pull
+make install
+```
 
-6. A UI will pop up where you'll need to enter your github name and token. For a [refresh](https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) on how to create a personal token.
+* Click on `xbar` again and click 'Refresh' to reload the plugins.
+1. You should see the bar change from saying `xbar` to a warning message about the plugin.  Click on the message and select 'Step 1' to generate a new GitHub access token.
+<img width="469" alt="image" src="https://user-images.githubusercontent.com/4342684/197207685-e33f3360-1674-47b8-84f6-9f6a26525a1d.png">
 
-![image](https://user-images.githubusercontent.com/47987801/180482923-2f1a24f8-4660-4558-9a0e-827a4b67acd9.png)
-
-7. Refresh the plugin and you're all set!
+* Accept the default scopes (it should be `repo`) and copy the token to clipboard.
+* Click on 'Step 2' in the plugin instructions to enter your secret into the config file.  Insert the secret after all the stars to obscure the token from view in the UI.  All stars will be stripped from the token before it is used.
+* Click on 'Step 3' to reload the plugin.
