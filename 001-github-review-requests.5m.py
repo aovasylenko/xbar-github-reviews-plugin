@@ -75,10 +75,11 @@ if __name__ == "__main__":
     if data:
         print("---")
     for x in data:
+        title = x['title'].replace('|', 'ǀ')
         color = "444444"
-        if x['title'].startswith("chore(deps):"):
+        if title.startswith("chore(deps):"):
             color = "999999"
-        print(f"{x['title']} | color=#{color} | size=12")
+        print(f"{title} | color=#{color} | size=12")
         print(f"{x['url']} | size=10 | href={x['url']}")
         print("---")
 
